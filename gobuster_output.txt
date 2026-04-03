@@ -1,0 +1,39 @@
+/.php                [33m (Status: 403)[0m [Size: 278]
+/.hta.php            [33m (Status: 403)[0m [Size: 278]
+/.hta                [33m (Status: 403)[0m [Size: 278]
+/.hta.zip            [33m (Status: 403)[0m [Size: 278]
+/.hta.old            [33m (Status: 403)[0m [Size: 278]
+/.htaccess           [33m (Status: 403)[0m [Size: 278]
+/.hta.bak            [33m (Status: 403)[0m [Size: 278]
+/.hta.txt            [33m (Status: 403)[0m [Size: 278]
+/.htaccess.txt       [33m (Status: 403)[0m [Size: 278]
+/.htaccess.old       [33m (Status: 403)[0m [Size: 278]
+/.htpasswd.txt       [33m (Status: 403)[0m [Size: 278]
+/.htaccess.bak       [33m (Status: 403)[0m [Size: 278]
+/.htaccess.php       [33m (Status: 403)[0m [Size: 278]
+/.htpasswd           [33m (Status: 403)[0m [Size: 278]
+/.htpasswd.bak       [33m (Status: 403)[0m [Size: 278]
+/.htpasswd.old       [33m (Status: 403)[0m [Size: 278]
+/.htpasswd.php       [33m (Status: 403)[0m [Size: 278]
+/.htpasswd.zip       [33m (Status: 403)[0m [Size: 278]
+/.htaccess.zip       [33m (Status: 403)[0m [Size: 278]
+/api                 [36m (Status: 301)[0m [Size: 316][34m [--> http://10.34.100.181/ojs/api/][0m
+/cache               [36m (Status: 301)[0m [Size: 318][34m [--> http://10.34.100.181/ojs/cache/][0m
+/classes             [36m (Status: 301)[0m [Size: 320][34m [--> http://10.34.100.181/ojs/classes/][0m
+/controllers         [36m (Status: 301)[0m [Size: 324][34m [--> http://10.34.100.181/ojs/controllers/][0m
+/docs                [36m (Status: 301)[0m [Size: 317][34m [--> http://10.34.100.181/ojs/docs/][0m
+/favicon.ico         [32m (Status: 200)[0m [Size: 1150]
+/js                  [36m (Status: 301)[0m [Size: 315][34m [--> http://10.34.100.181/ojs/js/][0m
+/index.php           [32m (Status: 200)[0m [Size: 4120]
+/index.php           [32m (Status: 200)[0m [Size: 4120]
+/lib                 [36m (Status: 301)[0m [Size: 316][34m [--> http://10.34.100.181/ojs/lib/][0m
+/locale              [36m (Status: 301)[0m [Size: 319][34m [--> http://10.34.100.181/ojs/locale/][0m
+/pages               [36m (Status: 301)[0m [Size: 318][34m [--> http://10.34.100.181/ojs/pages/][0m
+/plugins             [36m (Status: 301)[0m [Size: 320][34m [--> http://10.34.100.181/ojs/plugins/][0m
+/public              [36m (Status: 301)[0m [Size: 319][34m [--> http://10.34.100.181/ojs/public/][0m
+/robots.txt          [32m (Status: 200)[0m [Size: 32]
+/robots.txt          [32m (Status: 200)[0m [Size: 32]
+/schemas             [36m (Status: 301)[0m [Size: 320][34m [--> http://10.34.100.181/ojs/schemas/][0m
+/styles              [36m (Status: 301)[0m [Size: 319][34m [--> http://10.34.100.181/ojs/styles/][0m
+/templates           [36m (Status: 301)[0m [Size: 322][34m [--> http://10.34.100.181/ojs/templates/][0m
+/tools               [36m (Status: 301)[0m [Size: 318][34m [--> http://10.34.100.181/ojs/tools/][0m

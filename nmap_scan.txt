@@ -1,0 +1,16 @@
+# Nmap 7.95 scan initiated Mon Mar 23 14:25:31 2026 as: /snap/nmap/4171/usr/bin/nmap -sV -sC -p- --open -oN nmap_scan.txt 10.34.100.181
+Nmap scan report for devsecops (10.34.100.181)
+Host is up (0.000090s latency).
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 a0:a7:5f:35:5a:90:69:23:f9:c5:c6:8c:8c:b8:c2:4c (ECDSA)
+|_  256 5d:9b:e0:f3:eb:7e:c6:35:d3:45:2c:96:56:27:87:86 (ED25519)
+80/tcp open  http    Apache httpd 2.4.58 ((Ubuntu))
+|_http-title: Apache2 Ubuntu Default Page: It works
+|_http-server-header: Apache/2.4.58 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar 23 14:25:40 2026 -- 1 IP address (1 host up) scanned in 8.78 seconds
