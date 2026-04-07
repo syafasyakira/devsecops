@@ -7,6 +7,14 @@
 | C3 | `/index.php/journal1/article/view/$id` | GET | Halaman artikel | N/A | Limited | ![Evidence C3](screenshot/02-C3-XSS-Abstract.png) | **Stored XSS via Abstract (Potensial):** Payload `<script>alert('XSS_Abstract_C3')</script>` telah berhasil diinjeksikan ke dalam kolom Abstrak pada bagian Metadata artikel. Meskipun pengujian eksekusi akhir (pop-up) terkendala oleh sistem publikasi OJS di lingkungan lab yang terkunci (*Unscheduled*), titik ini tetap diidentifikasi sebagai *attack surface* kritis. Jika artikel berhasil diterbitkan, script tersebut akan tereksekusi otomatis pada browser pembaca yang mengakses halaman abstrak tersebut. |
 | C4 | Form profil user | POST | Edit profil | N/A | Limited | ![Evidence C4](screenshot/02-C4-Stored-XSS-Profil.png) | **Stored XSS via User Profile (Potensial):** Entry point ditemukan pada bagian profil publik pengguna (Tab *Public*). Payload `"><svg/onload=alert('Stored_XSS_Profil_C4')>` telah berhasil diinjeksikan ke dalam editor profil. Meskipun eksekusi visual (pop-up) tidak dapat dipicu secara langsung karena keterbatasan halaman publik pada environment lab (tidak ada artikel terbit/halaman editorial team), titik ini tetap diklasifikasikan sebagai *Attack Surface* yang berisiko tinggi karena data tersimpan permanen di database dan dapat menyerang pengguna lain yang berinteraksi dengan profil penyerang. |
 
+#### D. REST API
+
+| No | Endpoint | Method | Deskripsi | Status | Evidence | Gambar | Potensi Kerentanan |
+|---|---|---|---|---|---|---|---|
+| D1 | `/api/v1/users` | GET | Daftar user | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D1](screenshot/02-C1-Reflected_XSS.png) | **IDOR:** User dapat mengakses data milik user lain dengan cara mengganti ID pada URL secara langsung. **Information Disclosure:** User dapat mengakses informasi yang seharusnya tidak bisa di dapatkan oleh role yang dimiliki|
+| D2 | `/api/v1/submissions` | GET/POST | Manajemen submission | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D2](screenshot/02-C2-XSS-Metadata.png) | **IDOR:** User dapat mengakses data milik user lain, dalam hal ini melihat submission dari author lain, dengan cara mengganti ID pada URL secara langsung. |
+| D3 | `/api/v1/contexts` | GET | Daftar jurnal | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D3](screenshot/02-C3-XSS-Abstract.png) | **IDOR:** User dapat melihat jurnal yang dimilki oleh user lain dengan cara mengganti ID pada URL secara langsung. **Information Disclosure:** User dapat mengakses informas yang seharusnya tidak bisa di dapatkan oleh role yang dimiliki. |
+
 #### E. Admin Panel
 
 | No | Endpoint | Method | Deskripsi | Status | Evidence | Gambar | Potensi Kerentanan |
