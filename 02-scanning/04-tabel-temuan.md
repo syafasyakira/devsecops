@@ -488,3 +488,94 @@
 
 ---
 
+## Temuan #26
+
+| Field | Nilai |
+|---|---|
+| **Nama Kerentanan** | Server-Side Request Forgery (SSRF) |
+| **Tool Penemu** | DAST / Manual |
+| **Tool Spesifik** | CVE-2021-27188 (Akismet Plugin Exploration) |
+| **URL / File** | `/index.php/journal1/management/settings/website` |
+| **Parameter / Baris Kode** | Akismet API Server URL |
+| **Method** | POST |
+| **Payload** | `https://webhook.site/a268575c-35e5-4d76-851b-220c7276c242` |
+| **Response / Bukti** | HTTP GET Request diterima oleh Webhook.site dari IP Server OJS |
+| **OWASP Category** | A10:2021 – Server-Side Request Forgery (SSRF) |
+| **Severity (Raw)** | High |
+
+### Screenshot / Bukti
+![Screenshot Temuan 26](screenshot/26.png)
+
+### Catatan
+Kerentanan ini ditemukan pada fitur plugin Akismet di OJS versi 3.3.0-8. Aplikasi memungkinkan pengguna dengan hak akses Manager/Editor untuk menentukan URL server Akismet secara kustom. Namun, aplikasi tidak melakukan validasi atau pembatasan terhadap URL yang dimasukkan (tidak ada *allowlist*). 
+
+Penyerang dapat memasukkan URL yang mengarah ke infrastruktur eksternal (seperti Webhook.site) atau bahkan ke layanan internal server (localhost) untuk memetakan port atau mencuri data sensitif. Bukti di atas menunjukkan server OJS melakukan *outbound request* secara otomatis ke server pengontrol yang ditentukan penyerang setelah pengaturan disimpan.
+
+---
+
+## Temuan #27
+
+| Field | Nilai |
+|---|---|
+| **Nama Kerentanan** | Reflected Cross-Site Scripting (XSS) - Mitigated |
+| **Tool Penemu** | Manual |
+| **Tool Spesifik** | Browser DevTools (Console) & Manual Injection |
+| **URL / File** | `/index.php/journal1/search` |
+| **Parameter / Baris Kode** | `query` |
+| **Method** | GET |
+| **Payload** | `<script>alert('Reflected_XSS_C1')</script>` |
+| **Response / Bukti** | Input ter-encode (Sanitized) |
+| **OWASP Category** | A03:2021 – Injection |
+| **Severity (Raw)** | Low |
+
+### Screenshot / Bukti
+![Screenshot Temuan 27](screenshot/27.png)
+
+### Catatan
+Pengujian dilakukan pada fitur pencarian artikel. Meskipun parameter `query` menerima input script, aplikasi OJS versi ini telah menerapkan *HTML Encoding* pada karakter khusus (seperti `<` menjadi `&lt;`). Script tidak tereksekusi di browser dan hanya ditampilkan sebagai teks biasa di dalam atribut `value` form pencarian.
+
+---
+
+## Temuan #28
+
+| Field | Nilai |
+|---|---|
+| **Nama Kerentanan** | Stored Cross-Site Scripting (XSS) via Metadata Abstract |
+| **Tool Penemu** | Manual |
+| **Tool Spesifik** | OJS Submission Workflow |
+| **URL / File** | `/index.php/journal1/article/view/$id` |
+| **Parameter / Baris Kode** | Kolom "Abstract" pada Metadata Artikel |
+| **Method** | POST |
+| **Payload** | `<script>alert('XSS_Abstract_C3')</script>` |
+| **Response / Bukti** | Payload tersimpan di Database (Stored) |
+| **OWASP Category** | A03:2021 – Injection |
+| **Severity (Raw)** | Medium (Potential High) |
+
+### Screenshot / Bukti
+![Screenshot Temuan 28](screenshot/28.png)
+
+### Catatan
+Ditemukan celah *Stored XSS* pada input Abstrak artikel. Payload berhasil masuk dan tersimpan permanen di database tanpa filter yang ketat di sisi server. Kendala pada sistem publikasi lab (*Unscheduled status*) menghambat eksekusi visual (pop-up), namun secara teknis ini merupakan *attack surface* kritis karena script akan otomatis aktif saat artikel diakses oleh publik setelah statusnya berubah menjadi *Published*.
+
+---
+
+## Temuan #29
+
+| Field | Nilai |
+|---|---|
+| **Nama Kerentanan** | Stored Cross-Site Scripting (XSS) via User Profile |
+| **Tool Penemu** | Manual |
+| **Tool Spesifik** | User Profile Management |
+| **URL / File** | `/index.php/journal1/user/profile` (Tab Public) |
+| **Parameter / Baris Kode** | Kolom "Affiliation" / "Bio Statement" |
+| **Method** | POST |
+| **Payload** | `"><svg/onload=alert('Stored_XSS_Profil_C4')>` |
+| **Response / Bukti** | Payload tersimpan di Database (Stored) |
+| **OWASP Category** | A03:2021 – Injection |
+| **Severity (Raw)** | High |
+
+### Screenshot / Bukti
+![Screenshot Temuan 29](screenshot/29.png)
+
+### Catatan
+Injeksi *Stored XSS* berhasil dilakukan pada formulir profil pengguna. Penggunaan payload berbasis `svg` bertujuan untuk memicu eksekusi otomatis saat elemen dirender. Meskipun halaman profil publik tidak dapat diakses langsung karena keterbatasan konfigurasi jurnal di lab, risiko temuan ini sangat tinggi karena dapat dimanfaatkan untuk mencuri *session cookie* administrator lain atau pembaca yang melihat informasi profil penyerang.
