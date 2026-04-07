@@ -488,3 +488,28 @@
 
 ---
 
+## Temuan #26
+
+| Field | Nilai |
+|---|---|
+| **Nama Kerentanan** | Server-Side Request Forgery (SSRF) |
+| **Tool Penemu** | DAST / Manual |
+| **Tool Spesifik** | CVE-2021-27188 (Akismet Plugin Exploration) |
+| **URL / File** | `/index.php/journal1/management/settings/website` |
+| **Parameter / Baris Kode** | Akismet API Server URL |
+| **Method** | POST |
+| **Payload** | `https://webhook.site/a268575c-35e5-4d76-851b-220c7276c242` |
+| **Response / Bukti** | HTTP GET Request diterima oleh Webhook.site dari IP Server OJS |
+| **OWASP Category** | A10:2021 – Server-Side Request Forgery (SSRF) |
+| **Severity (Raw)** | High |
+
+### Screenshot / Bukti
+![Screenshot Temuan 26](screenshot/26.png)
+
+### Catatan
+Kerentanan ini ditemukan pada fitur plugin Akismet di OJS versi 3.3.0-8. Aplikasi memungkinkan pengguna dengan hak akses Manager/Editor untuk menentukan URL server Akismet secara kustom. Namun, aplikasi tidak melakukan validasi atau pembatasan terhadap URL yang dimasukkan (tidak ada *allowlist*). 
+
+Penyerang dapat memasukkan URL yang mengarah ke infrastruktur eksternal (seperti Webhook.site) atau bahkan ke layanan internal server (localhost) untuk memetakan port atau mencuri data sensitif. Bukti di atas menunjukkan server OJS melakukan *outbound request* secara otomatis ke server pengontrol yang ditentukan penyerang setelah pengaturan disimpan.
+
+---
+
