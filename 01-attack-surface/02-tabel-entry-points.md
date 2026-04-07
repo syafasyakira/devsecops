@@ -11,9 +11,9 @@
 
 | No | Endpoint | Method | Deskripsi | Status | Evidence | Gambar | Potensi Kerentanan |
 |---|---|---|---|---|---|---|---|
-| D1 | `/api/v1/users` | GET | Daftar user | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D1](screenshot/02-C1-Reflected_XSS.png) | **IDOR:** User dapat mengakses data milik user lain dengan cara mengganti ID pada URL secara langsung. **Information Disclosure:** User dapat mengakses informasi yang seharusnya tidak bisa di dapatkan oleh role yang dimiliki|
-| D2 | `/api/v1/submissions` | GET/POST | Manajemen submission | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D2](screenshot/02-C2-XSS-Metadata.png) | **IDOR:** User dapat mengakses data milik user lain, dalam hal ini melihat submission dari author lain, dengan cara mengganti ID pada URL secara langsung. |
-| D3 | `/api/v1/contexts` | GET | Daftar jurnal | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D3](screenshot/02-C3-XSS-Abstract.png) | **IDOR:** User dapat melihat jurnal yang dimilki oleh user lain dengan cara mengganti ID pada URL secara langsung. **Information Disclosure:** User dapat mengakses informas yang seharusnya tidak bisa di dapatkan oleh role yang dimiliki. |
+| D1 | `/api/v1/users` | GET | Daftar user | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D1](screenshot/D1-Users.png) | **IDOR:** User dapat mengakses data milik user lain dengan cara mengganti ID pada URL secara langsung. **Information Disclosure:** User dapat mengakses informasi yang seharusnya tidak bisa di dapatkan oleh role yang dimiliki|
+| D2 | `/api/v1/submissions` | GET/POST | Manajemen submission | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D2](screenshot/D2-Submissions.png) | **IDOR:** User dapat mengakses data milik user lain, dalam hal ini melihat submission dari author lain, dengan cara mengganti ID pada URL secara langsung. |
+| D3 | `/api/v1/contexts` | GET | Daftar jurnal | 403 | Sistem membatasi akses endpoint API runtuk role tertentu | ![Evidence D3](screenshot/D3-Contexts.png) | **IDOR:** User dapat melihat jurnal yang dimilki oleh user lain dengan cara mengganti ID pada URL secara langsung. **Information Disclosure:** User dapat mengakses informas yang seharusnya tidak bisa di dapatkan oleh role yang dimiliki. |
 
 #### E. Admin Panel
 
