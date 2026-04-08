@@ -36,14 +36,3 @@ Keterangan validasi Gambar 1:
 - Scan completed successfully.
 - Findings: 0 (0 blocking).
 
-### Gambar 2 - Hasil scan Semgrep (run tambahan)
-
-Path target gambar: ../02-scanning/sast/screenshot/02.png
-
-Catatan: file gambar kedua belum tersedia di repository saat ini, jadi belum bisa ditampilkan.
-
-
-
-## Catatan
-
-Status nol temuan bukan berarti sistem pasti aman 100 persen. Ini berarti pada konfigurasi rule dan cakupan scan saat ini, Semgrep tidak menemukan pola kerentanan yang terdeteksi.
