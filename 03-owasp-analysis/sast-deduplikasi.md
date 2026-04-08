@@ -36,11 +36,13 @@ Keterangan validasi Gambar 1:
 - Scan completed successfully.
 - Findings: 0 (0 blocking).
 
-### Gambar 2 - Hasil scan Semgrep tambahan
+### Gambar 2 - Hasil scan Semgrep (run tambahan)
 
-Path yang disiapkan: `../02-scanning/sast/screenshot/02.png`
+Path target gambar: ../02-scanning/sast/screenshot/02.png
 
-Catatan: file Gambar 2 belum ada di repository saat dokumen ini diperbarui.
+Catatan: file gambar kedua belum tersedia di repository saat ini, jadi belum bisa ditampilkan.
+
+
 
 ## Catatan
 
