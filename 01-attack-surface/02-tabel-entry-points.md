@@ -1,3 +1,12 @@
+#### A. Authentication & Session
+
+| No | Endpoint | Status | Teknologi Terdeteksi | Evidence | Potensi Kerentanan |
+|---|---|---|---|---|---|
+| B1 | `/index.php/index/login` | 200 OK | Apache 2.4.58, Ubuntu Linux, Bootstrap, JQuery, HTML5, OJS 3.3.0-8, Cookie (OJSSESSID) | MetaGenerator menunjukkan OJS version, HTTP header mengungkap server | **Information Disclosure:** Versi Apache dan OJS terungkap secara publik, memungkinkan attacker melakukan enumerasi CVE yang relevan. Selain itu, penggunaan cookie `OJSSESSID` tanpa atribut keamanan tambahan berpotensi terhadap session hijacking. |
+| B2 | `/index.php/index/login/signIn` | 200 OK | Apache 2.4.58, Ubuntu Linux, JQuery, OJS 3.3.0-8 | Konsistensi fingerprint antar endpoint | **Attack Surface Mapping:** Endpoint autentikasi menggunakan stack yang sama, sehingga kerentanan pada server (Apache/OJS) berdampak langsung pada proses login. Risiko meningkat jika terdapat CVE yang belum di-patch. |
+| B3 | `/index.php/index/login/lostPassword` | 200 OK | Apache 2.4.58, Ubuntu Linux, JQuery, OJS 3.3.0-8 | Title: "Reset Password" | **Sensitive Function Exposure:** Endpoint reset password terdeteksi secara publik dan dapat dipetakan oleh attacker untuk eksploitasi seperti brute force token atau email enumeration. |
+| B4 | `/index.php/index/user/register` | 200 OK | Apache 2.4.58, Ubuntu Linux, JQuery, OJS 3.3.0-8, PasswordField[password,password2] | Form field terdeteksi oleh WhatWeb | **Automated Attack Risk:** Struktur form registrasi dapat dengan mudah dikenali oleh bot untuk melakukan mass registration atau spam account creation. |
+
 #### C. User Input / Reflected Data
 
 | No | Endpoint | Method | Deskripsi | Status | Evidence | Gambar | Potensi Kerentanan |
