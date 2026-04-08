@@ -1,4 +1,4 @@
-### Server Side Request Forgery (SSRF)
+## 1. Server Side Request Forgery (SSRF)
 
 |Komponen|Nilai|Score|
 |--------------------------|-------------------------------|-|
@@ -11,7 +11,7 @@
 |Integrity|Low (L)|0.22|
 |Availability|None (N)|0.00|
 
-### Stored Cross-Site Scripting (XSS) via Metadata Abstract
+## 2. Stored Cross-Site Scripting (XSS) via Metadata Abstract
 
 |Komponen|Nilai|Score|
 |-------------------------|-------------------------------|-|
@@ -24,7 +24,7 @@
 |Integrity|Low (L)|0.22|
 |Availability|None (N)|0.00|
 
-### Stored Cross-Site Scripting (XSS) via User Profile
+## 3. Stored Cross-Site Scripting (XSS) via User Profile
 
 |Komponen|Nilai|Score|
 |-------------------------|-------------------------------|-|
@@ -37,7 +37,7 @@
 |Integrity|None (N)|0.00|
 |Availability|None (N)|0.00|
 
-### Broken Access Control - Multiple Directory Indexing Found
+## 4. Broken Access Control - Multiple Directory Indexing Found
 
 |Komponen|Nilai|Score|
 |-------------------------|-------------------------------|-|
@@ -50,7 +50,7 @@
 |Integrity|None (N)|0.00|
 |Availability|None (N)|0.00|
 
-### Security Misconfiguration - Content Security Policy (CSP) Header Not Set
+## 5. Security Misconfiguration - Content Security Policy (CSP) Header Not Set
 
 |Komponen|Nilai|Score|
 |-------------------------|-------------------------------|-|
