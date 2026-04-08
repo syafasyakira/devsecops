@@ -13,9 +13,9 @@ Tanggal analisis: 2026-04-09
 
 ## Sumber Data
 
-- ../02-scanning/sast/semgrep_custom.json
-- ../02-scanning/sast/semgrep_owasp.json
-- ../02-scanning/sast/semgrep_php.json
+- semgrep_custom.json
+- semgrep_owasp.json
+- semgrep_php.json
 
 Ketiga file JSON di atas memiliki field results dengan jumlah 0, sehingga tidak ada item yang bisa dideduplikasi maupun diklasifikasikan sebagai false positive.
 
@@ -30,9 +30,18 @@ Ketiga file JSON di atas memiliki field results dengan jumlah 0, sehingga tidak 
 
 ### Gambar 1 - Hasil scan Semgrep
 
-![Gambar 1 - Scan Summary Semgrep](../02-scanning/sast/screenshot/01.png)
+![Gambar 1 - Scan Summary Semgrep](screenshot/01.png)
 
 Keterangan validasi Gambar 1:
 - Scan completed successfully.
 - Findings: 0 (0 blocking).
 
+### Gambar 2 - Hasil scan Semgrep (run tambahan)
+
+Path target gambar: screenshot/02.png
+
+Catatan: file gambar kedua belum tersedia di repository saat ini, jadi belum bisa ditampilkan.
+
+## Catatan
+
+Status nol temuan bukan berarti sistem pasti aman 100 persen. Ini berarti pada konfigurasi rule dan cakupan scan saat ini, Semgrep tidak menemukan pola kerentanan yang terdeteksi.
