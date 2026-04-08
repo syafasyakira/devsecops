@@ -54,16 +54,4 @@ Setiap temuan dipetakan ke:
 | SAST-04 | `HtmlArticleGalleyPlugin.inc.php` | Potential file path manipulation | A05 | CWE-73 | - |
 | SAST-05 | `lib/pkp/classes/template/PKPTemplateManager.inc.php` | Missing output escaping in template rendering | A03 | CWE-79 | - |
 
-## Temuan Informasional / Tidak Dipetakan
 
-Temuan berikut ada di laporan, tetapi tidak dipetakan sebagai vulnerability utama karena bersifat informational atau coverage note:
-
-- DAST-20: Cookie slack detector
-- DAST-22: Modern web application
-- DAST-23: Session management response identified
-- DAST-25: User agent fuzzer
-- SAST-06: Semgrep false negative / no findings note
-
-## Catatan
-
-Dokumen ini menggunakan temuan nyata dari laporan DAST dan SAST, serta menuliskan entry point atau file sumber untuk memudahkan pelacakan balik ke artefak pengujian.
