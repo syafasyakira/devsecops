@@ -52,6 +52,14 @@ Setiap temuan dari Pertemuan 3 harus dipetakan ke:
 | VUL-009 | XSS via Open Redirect parameter | A03 | CWE-601 | CVE-2022-24822 |
 | VUL-010 | IDOR pada API `/api/v1/users/{id}` | A01 | CWE-639 | - |
 
+### Ringkasan Aturan Pemetaan
+
+| Langkah | Isi |
+|---|---|
+| 1 | Tentukan kategori OWASP paling relevan untuk temuan |
+| 2 | Cocokkan kelemahan dengan CWE yang sesuai |
+| 3 | Cantumkan CVE bila kerentanannya sudah terdokumentasi |
+
 ---
 
 ## 3. CVSS v3.1 — Scoring Kerentanan

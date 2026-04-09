@@ -145,3 +145,30 @@ Tidak ada enforcement escaping pada template.
 ### Catatan
 
 Semgrep tidak mendeteksi kerentanan karena keterbatasan rule-based analysis.
+
+---
+
+## Bukti Tambahan Hasil Scan SAST (Semgrep)
+
+### Run 1
+
+- Perintah: `semgrep --config p/php . --json -o semgrep_php.json`
+- Findings: `0 (0 blocking)`
+- Rules run: `23`
+- Targets scanned: `482`
+- Parsed lines: `~100.0%`
+- Scan scope: hanya file yang terlacak git, sebagian file di-skip oleh `.semgrepignore`, dan file > 1.0 MB di-skip.
+
+![Scan Summary Semgrep - Run 1](screenshot/01.png)
+
+### Run 2
+
+- Perintah: `semgrep --config p/php . --json -o semgrep_owasp.json`
+- Findings: `0 (0 blocking)`
+- Rules run: `23`
+- Targets scanned: `482`
+- Parsed lines: `~100.0%`
+- Catatan: output konsisten dengan Run 1 (tidak ada finding).
+
+Catatan bukti gambar Run 2:
+- Screenshot kedua belum tersimpan sebagai file terpisah di folder `02-scanning/sast/screenshot/` pada saat update ini.
