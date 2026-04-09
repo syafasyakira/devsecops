@@ -113,7 +113,7 @@ Path file digunakan tanpa validasi eksplisit.
 
 ### Screenshot / Bukti
 
-[Gunakan bukti XSS dari pengujian sebelumnya]
+![Screenshot Temuan 05](screenshot/05.png)
 
 ### Catatan
 
