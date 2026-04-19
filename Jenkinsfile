@@ -11,7 +11,7 @@ pipeline {
         IMAGE_NAME     = "${JOB_NAME}"
         IMAGE_TAG      = "${BUILD_NUMBER}"
         IMAGE_PREV_TAG = "${BUILD_NUMBER.toInteger() - 1}"
-        CONTAINER_NAME = "${JOB_NAME}-app"
+        CONTAINER_NAME = "kelompok-d-app"
         APP_PORT       = "8084"
     }
 
